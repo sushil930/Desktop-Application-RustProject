@@ -10,7 +10,6 @@ const BARS: [(f32, f32, f32, f32, f32); 5] = [
     (402.0, 204.0, 52.0, 294.0, 26.0),
     (470.0, 124.0, 52.0, 374.0, 26.0),
 ];
-const BACKGROUND: (u8, u8, u8) = (17, 17, 17);
 const ACCENT: (u8, u8, u8) = (249, 115, 22);
 
 pub fn window_icon() -> Icon {
@@ -44,7 +43,6 @@ fn render_logo_rgba(size: u32) -> Vec<u8> {
 
             if covered_samples > 0.0 {
                 let index = ((y * size + x) * 4) as usize;
-                let inverse_coverage = 1.0 / covered_samples;
 
                 pixels[index] = ACCENT.0;
                 pixels[index + 1] = ACCENT.1;
